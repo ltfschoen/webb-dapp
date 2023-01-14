@@ -3,6 +3,9 @@
 trap "echo; exit" INT
 trap "echo; exit" HUP
 
+# try to install wget and curl depending on host operating system
+./get-deps.sh
+
 # try to fetch public IP address if value not set in .env
 PUBLIC_IP_ADDRESS_FALLBACK=$(wget http://ipecho.net/plain -O - -q ; echo)
 NAME_PROJECT_FALLBACK=webb-monorepo
