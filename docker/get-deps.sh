@@ -1,5 +1,6 @@
 #!/bin/bash
 # Copyright 2015-2020 Parity Technologies (UK) Ltd.
+# Reference: https://github.com/paritytech/scripts/blob/master/get-substrate.sh
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	set -e
