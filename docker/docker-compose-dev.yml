@@ -4,7 +4,7 @@ services:
     container_name: ${NAME_PROJECT}-dev
     restart: always
     build:
-      context: "."
+      context: "../"
       dockerfile: ./docker/Dockerfile.dev
       args:
         - NAME_PROJECT=${NAME_PROJECT}
@@ -13,13 +13,13 @@ services:
         - PORT_BRIDGE_DAPP=${PORT_BRIDGE_DAPP}
         - PORT_STATS_DAPP=${PORT_STATS_DAPP}
     volumes:
-      - ./:/app/${NAME_PROJECT}:delegated
+      - ../:/app/${NAME_PROJECT}:delegated
       - ignore:/app/${NAME_PROJECT}/node_modules
     ports:
       - "${PORT_BRIDGE_DAPP}:${PORT_BRIDGE_DAPP}"
       - "${PORT_STATS_DAPP}:${PORT_STATS_DAPP}"
     env_file:
-      - .env
+      - ../.env
 
 volumes:
   ignore:

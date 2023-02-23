@@ -147,6 +147,7 @@ function createWebpack(env, mode = 'production') {
                     { loose: false },
                   ],
                   ['@babel/plugin-proposal-private-methods', { loose: false }],
+                  '@babel/plugin-syntax-import-assertions',
                 ].filter(Boolean),
               },
             },
